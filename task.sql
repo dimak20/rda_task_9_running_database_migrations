@@ -51,4 +51,4 @@ CREATE TABLE Users (
 
 --changeset mate.acamemy:6 labels:0.0.3
 CREATE INDEX Email ON Users (Email);
---rollback ALTER TABLE USERS DROP INDEX Email;
+--rollback ALTER TABLE Users DROP INDEX Email;
