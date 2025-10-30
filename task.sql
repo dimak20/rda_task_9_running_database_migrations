@@ -49,6 +49,6 @@ CREATE TABLE Users (
 );
 --rollback DROP TABLE Users;
 
---changeset mate.academy:4 labels:0.0.3
+--changeset mate.academy:5 labels:0.0.3
 CREATE INDEX Email ON Users (Email);
 --rollback ALTER TABLE Users DROP INDEX Email;
