@@ -79,7 +79,7 @@ docker run --network=test-network -v $(pwd):/repos --workdir /repos/ -e INSTALL_
     -e LIQUIBASE_COMMAND_USERNAME=root \
     -e LIQUIBASE_COMMAND_PASSWORD=P@ssw0rd \
     -e LIQUIBASE_COMMAND_URL=jdbc:mysql://mysql:3306/ShopDB \
-    liquibase/liquibase liquibase rollback --changelog-file=task.sql 0.0.2
+    liquibase rollback --tag=0.0.2 --changelog-file=task.sql
 
 echo "INFO: Running the tests for database schema version 0.0.2"
 docker exec mysql sh -c 'mysql -u root -pP@ssw0rd < /scripts/test-queries/3-test-0.0.2.sql' > log.txt
@@ -92,7 +92,7 @@ docker run --network=test-network -v $(pwd):/repos --workdir /repos/ -e INSTALL_
     -e LIQUIBASE_COMMAND_USERNAME=root \
     -e LIQUIBASE_COMMAND_PASSWORD=P@ssw0rd \
     -e LIQUIBASE_COMMAND_URL=jdbc:mysql://mysql:3306/ShopDB \
-    liquibase/liquibase liquibase rollback --changelog-file=task.sql 0.0.1
+    liquibase rollback --tag=0.0.1 --changelog-file=task.sql
 
 echo "INFO: Running the tests for database schema version 0.0.1"
 docker exec mysql sh -c 'mysql -u root -pP@ssw0rd < /scripts/test-queries/2-test-0.0.1.sql' > log.txt
